@@ -5,40 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="css/style.css" class="" />
-    <link
-      rel="stylesheet"
-      href="css-toggle-switch-master 2/dist/toggle-switch.css"
-      class=""
-    />
+    <link rel="stylesheet" href="css/toggle-switch.css" class="" />
     <link
       href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
       rel="stylesheet"
     />
     <script src="https://kit.fontawesome.com/ba2c80403c.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <title>WebApp Dashboard</title>
   </head>
   <body class="grid-container">
     <header>
       <ul class="note-menu">
-          <li class="note-item">
-            <div class="notification-dot"></div>
-            You have 6 unread messages
-            <div class="close">X</div>
-          </li>
-          <li class="note-item">
-            <div class="notification-dot"></div>
-            You have 3 new followers
-            <div class="close">X</div>
-          </li>
-          <li class="note-item">
-            <div class="notification-dot"></div>
-            Your password expires in 7 days
-            <div class="close">X</div>
-          </li>
-        </ul>
+        <li class="note-item">
+          <div class="notification-dot"></div>
+          You have 6 unread messages
+          <div class="close">X</div>
+        </li>
+        <li class="note-item">
+          <div class="notification-dot"></div>
+          You have 3 new followers
+          <div class="close">X</div>
+        </li>
+        <li class="note-item">
+          <div class="notification-dot"></div>
+          Your password expires in 7 days
+          <div class="close">X</div>
+        </li>
+      </ul>
       <h1><span>Your</span>App</h1>
       <div class="header-content">
-
         <div class="bell-icon">
           <svg
             version="1.1"
@@ -66,8 +62,7 @@
               </g>
             </g>
           </svg>
-          <div class="notification">
-          </div>
+          <div class="notification"></div>
         </div>
         <div class="profile-image"></div>
         <h4>Rakthy Thip</h4>
@@ -202,7 +197,9 @@
     <main>
       <div class="main-header">
         <h2 class="headline">Dashboard</h2>
-        <div class="search"><input type="text" id="search" placeholder="search.." /></div>
+        <div class="search">
+          <input type="text" id="search" placeholder="search.." />
+        </div>
       </div>
 
       <div class="alert" id="alert"></div>
@@ -390,7 +387,8 @@
           />
           <div class="member-text">
             <p>
-              <span class="member-name">Victoria Chambers</span> commented on YourApp's SEO tips
+              <span class="member-name">Victoria Chambers</span> commented on
+              YourApp's SEO tips
             </p>
             <p>3 hours ago</p>
           </div>
@@ -402,7 +400,10 @@
             class="member-image"
           />
           <div class="member-text">
-            <p><span class="member-name">Ryan Gallant</span> likes your facebook changes in 2018</p>
+            <p>
+              <span class="member-name">Ryan Gallant</span> likes your facebook
+              changes in 2018
+            </p>
             <p>5 hours ago</p>
           </div>
         </div>
@@ -413,7 +414,10 @@
             class="member-image"
           />
           <div class="member-text">
-            <p><span class="member-name">Kimberly Johnson</span> posted YourApp's SEO tips</p>
+            <p>
+              <span class="member-name">Kimberly Johnson</span> posted YourApp's
+              SEO tips
+            </p>
             <p>1 day ago</p>
           </div>
         </div>
@@ -424,7 +428,10 @@
             class="member-image"
           />
           <div class="member-text">
-            <p><span class="member-name">Tyrone Hakeem</span> likes your twitter changes in 2019</p>
+            <p>
+              <span class="member-name">Tyrone Hakeem</span> likes your twitter
+              changes in 2019
+            </p>
             <p>2 days ago</p>
           </div>
         </div>
@@ -432,12 +439,14 @@
       <section class="message">
         <h3>Message User</h3>
         <form action="post" id="widget-container">
-          <input
-            type="text"
-            placeholder="Search for User"
-            class="form-field"
-            id="userField"
-          />
+          <input list="browsers" name="browser" id="userField" placeholder="Search for User"/>
+          <datalist id="browsers">
+            <option value="Victoria Chambers"> </option>
+            <option value="Ryan Gallant"> </option>
+            <option value="Kimberly Johnson"> </option>
+            <option value="Tyrone Hakeem"> </option>
+          </datalist>
+
           <textarea
             placeholder="Message for User"
             class="form-area"
@@ -450,17 +459,19 @@
         <h3>Settings</h3>
         <div class="toggle">
           <label class="switch-light switch-candy" onclick="">
+            <input type="checkbox" class="checkbox" id="email-notification"/>
             <strong> Send Email Notifications</strong>
             <span> <span>Off</span> <span>On</span> <a></a> </span>
           </label>
           <label class="switch-light switch-candy" onclick="">
+            <input type="checkbox" class="checkbox" id="profile-to-public"/>
             <strong>Set Profile to Public</strong>
             <span> <span>Off</span> <span>On</span> <a></a></span>
           </label>
         </div>
         <div class="setting-input">
-          <select class="form-field">
-            <option disabled selected>Select a Timezone</option>
+          <select id="select">
+            <option selected disabled>Select Time-Zone</option>
             <option value="Pacific">Pacific</option>
             <option value="Pacific">Mountain</option>
             <option value="Pacific">Central</option>
@@ -472,7 +483,7 @@
       </section>
     </main>
     <script src="js/search.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
-  <script src="js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>

@@ -284,7 +284,6 @@ section h3 {
   background: #00c07f;
   border-radius: 8px;
   padding: 8px;
-
 }
 
 section.daily,
@@ -362,19 +361,29 @@ section.donut {
 section form {
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
-section form input {
+section #userField {
   height: 35px;
   border-radius: 2px;
   outline: none;
   padding: 10px;
+  position: relative;
+  margin: 0;
 }
-section form textarea {
+
+section .userComplete:hover {
+  background: #00c07f;
+  color: rgba(49, 61, 75, 1);
+  cursor: pointer;
+}
+section #messageField {
   border-radius: 2px;
   outline: none;
   padding: 10px;
   height: 100px;
+  margin: 12px 0;
 }
 section button {
   background: #313d4b;
@@ -383,12 +392,15 @@ section button {
   border-radius: 2px;
   outline: none;
   font-size: 1em;
+  width: 100%;
 }
 section form input,
 section form textarea,
 section form button {
-  margin: 5px;
   border: 1px solid #313d4b;
+}
+.swal-button {
+background: #00c07f;
 }
 
 /* setting style */
@@ -535,5 +547,4 @@ label strong {
       "members activity"
       "message settings";
   }
-
 }
